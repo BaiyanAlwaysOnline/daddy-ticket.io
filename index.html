@@ -1,39 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        .container {
-            position: relative;
-        }
-        img {
-            display: inline-block;
-            width: 100%;
-            height: 100%;
-        }
-        .clock {
-            position: absolute;
-            top: 212px;
-            right: 30px;
-            font-weight: 500;
-            color: #9dbe99;
-            font-size: 12px;
-        }
+      .container {
+        position: relative;
+      }
+      img {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+      .clock {
+        position: absolute;
+        top: 212px;
+        right: 30px;
+        font-weight: 500;
+        color: #9dbe99;
+        font-size: 12px;
+      }
+
+      .from {
+        position: absolute;
+        top: 240px;
+        left: 30px;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .to {
+        position: absolute;
+        top: 240px;
+        right: 30px;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .info-date {
+        position: absolute;
+        top: 270px;
+        left: 30px;
+        font-size: 12px;
+      }
+
+      .info-chexiang {
+        position: absolute;
+        top: 270px;
+        right: 30px;
+        font-size: 12px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <img src="./bg.jpg" alt="">
-        <div class="clock"></div>
+      <img src="./bg.jpg" alt="" />
+      <div class="clock"></div>
+      <div class="from">嘉峪关</div>
+      <div class="to">厂区</div>
+      <div class="info-date">08月11号 07:50开</div>
+      <div class="info-chexiang">12车厢 21</div>
     </div>
     <script src="https://unpkg.com/dayjs@1.11.9/dayjs.min.js"></script>
     <script>
-        var dom = document.querySelector('.clock')
-        setInterval(() => {
-            dom.textContent = dayjs().format('MM月DD日 HH:mm:ss')
-        }, 1000)
+      var dom = document.querySelector(".clock");
+      setInterval(() => {
+        dom.textContent = dayjs().format("MM月DD日 HH:mm:ss");
+      }, 1000);
     </script>
-</body>
+  </body>
 </html>
