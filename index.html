@@ -51,23 +51,45 @@
         right: 30px;
         font-size: 12px;
       }
+
+      .name {
+        position: absolute;
+        top: 300px;
+        right: 112px;
+        font-size: 12px;
+        font-weight: bold;
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <img src="./bg.jpg" alt="" />
       <div class="clock"></div>
-      <div class="from">厂区</div>
-      <div class="to">嘉峪关</div>
-      <!-- <div class="info-date">08月11号 07:50开</div> -->
-      <div class="info-date">08月11号 16:45开</div>
+      <div class="from">嘉峪关</div>
+      <div class="to">厂区</div>
+      <div class="name">王建国</div>
+      <div class="info-date"></div>
+      <!-- <div class="info-date">08月11号 16:45开</div> -->
       <div class="info-chexiang">12车厢 21</div>
     </div>
     <script src="https://unpkg.com/dayjs@1.11.9/dayjs.min.js"></script>
     <script>
-      var dom = document.querySelector(".clock");
+      var clockDom = document.querySelector(".clock");
+      var dateDom = document.querySelector(".info-date");
+      var fromDom = document.querySelector(".from");
+      var toDom = document.querySelector(".to");
       setInterval(() => {
-        dom.textContent = dayjs().format("MM月DD日 HH:mm:ss");
+        const isFriday = dayjs().day() === 5;
+        clockDom.textContent = dayjs().format("MM月DD日 HH:mm:ss");
+        if (!isFriday) {
+          dateDom.textContent = dayjs().format("MM月DD日") + '  16:45开';
+          fromDom.textContent = '厂区'
+          toDom.textContent = '嘉峪关'
+        }else {
+          dateDom.textContent = dayjs().format("MM月DD日") + '  07:50开';
+          fromDom.textContent = '嘉峪关'
+          toDom.textContent = '厂区'
+        }
       }, 1000);
     </script>
   </body>
