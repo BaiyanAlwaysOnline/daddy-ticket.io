@@ -81,7 +81,7 @@
       setInterval(() => {
         const isFriday = dayjs().day() === 5;
         clockDom.textContent = dayjs().format("MM月DD日 HH:mm:ss");
-        if (!isFriday) {
+        if (isFriday) {
           dateDom.textContent = dayjs().format("MM月DD日") + '  16:45开';
           fromDom.textContent = '厂区'
           toDom.textContent = '嘉峪关'
