@@ -78,16 +78,16 @@
       var fromDom = document.querySelector(".from");
       var toDom = document.querySelector(".to");
       setInterval(() => {
-        const isFriday = dayjs().day() === 5;
+        const isMonday = dayjs().day() === 1;
         clockDom.textContent = dayjs().format("MM月DD日 HH:mm:ss");
-        if (isFriday) {
-          dateDom.textContent = dayjs().format("MM月DD日") + '  16:45开';
-          fromDom.textContent = '厂区'
-          toDom.textContent = '嘉峪关'
-        }else {
+        if (isMonday) {
           dateDom.textContent = dayjs().format("MM月DD日") + '  07:50开';
           fromDom.textContent = '嘉峪关'
           toDom.textContent = '厂区'
+        }else {
+          dateDom.textContent = dayjs().format("MM月DD日") + '  16:45开';
+          fromDom.textContent = '厂区'
+          toDom.textContent = '嘉峪关'
         }
       }, 1000);
     </script>
