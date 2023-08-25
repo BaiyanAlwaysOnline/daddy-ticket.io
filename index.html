@@ -77,6 +77,7 @@
       var dateDom = document.querySelector(".info-date");
       var fromDom = document.querySelector(".from");
       var toDom = document.querySelector(".to");
+      
       setInterval(() => {
         const isMonday = dayjs().day() === 1;
         clockDom.textContent = dayjs().format("MM月DD日 HH:mm:ss");
