@@ -81,7 +81,7 @@
       setInterval(() => {
         const isMonday = dayjs().day() === 1;
         clockDom.textContent = dayjs().format("MM月DD日 HH:mm:ss");
-        if (isMonday) {
+        if (!isMonday) {
           dateDom.textContent = dayjs().format("MM月DD日") + '  07:50开';
           fromDom.textContent = '嘉峪关'
           toDom.textContent = '厂区'
