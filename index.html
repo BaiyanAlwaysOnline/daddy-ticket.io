@@ -5,44 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> </title>
     <style>
-      .container {
-        position: relative;
+      body {
+        margin: 0;
       }
-      img {
-        display: inline-block;
-        width: 100%;
-        height: 100%;
+      .container {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        background-image: url('./bg.jpg');
+        background-size: cover;
       }
       .clock {
         position: absolute;
-        top: 212px;
+        top: 352px;
         right: 30px;
         font-weight: 500;
-        color: #9dbe99;
-        font-size: 12px;
+        color: #5aa67c;
+        font-size: 14px;
       }
 
       .from {
         position: absolute;
-        top: 240px;
-        left: 30px;
+        top: 220px;
+        left: 40px;
         font-size: 14px;
         font-weight: 500;
       }
 
       .to {
         position: absolute;
-        top: 240px;
-        right: 30px;
+        top: 220px;
+        right: 40px;
         font-size: 14px;
         font-weight: 500;
       }
 
       .info-date {
         position: absolute;
-        top: 270px;
-        left: 30px;
-        font-size: 12px;
+        top: 260px;
+        left: 40px;
+        font-size: 13px;
       }
 
       .info-chexiang {
@@ -54,22 +56,20 @@
 
       .name {
         position: absolute;
-        top: 305px;
-        right: 112px;
+        top: 292px;
+        right: 152px;
         font-size: 14px;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <img src="./bg.jpg" alt="" />
       <div class="clock"></div>
       <div class="from">嘉峪关</div>
       <div class="to">厂区</div>
       <div class="name">王建国</div>
       <div class="info-date"></div>
-      <!-- <div class="info-date">08月11号 16:45开</div> -->
-      <div class="info-chexiang">12车厢 21</div>
+      <!-- <div class="info-chexiang">12车厢 21</div> -->
     </div>
     <script src="https://unpkg.com/dayjs@1.11.9/dayjs.min.js"></script>
     <script>
