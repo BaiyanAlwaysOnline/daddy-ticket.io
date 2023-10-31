@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> </title>
     <style>
+      html {
+        font-size: 100px;
+      }
       body {
         margin: 0;
       }
@@ -12,7 +15,7 @@
         width: 100vw;
         height: 100vh;
         position: relative;
-        background-image: url('./bg.jpg');
+        background-image: url("./bg.jpg");
         background-size: cover;
       }
       .clock {
@@ -26,50 +29,55 @@
 
       .from {
         position: absolute;
-        top: 220px;
-        left: 40px;
-        font-size: 14px;
+        top: 2.2rem;
+        left: 0.35rem;
+        font-size: 0.14rem;
         font-weight: 500;
       }
-
+      .num {
+        position: absolute;
+        top: 2.2rem;
+        left: 2rem;
+        font-size: 0.14rem;
+      }
       .to {
         position: absolute;
-        top: 220px;
-        right: 40px;
-        font-size: 14px;
+        top: 2.2rem;
+        right: 0.35rem;
+        font-size: 0.14rem;
         font-weight: 500;
       }
 
       .info-date {
         position: absolute;
-        top: 260px;
-        left: 40px;
-        font-size: 13px;
+        top: 2.6rem;
+        left: 0.35rem;
+        font-size: 0.13rem;
       }
 
       .info-chexiang {
         position: absolute;
-        top: 270px;
-        right: 30px;
-        font-size: 12px;
+        top: 2.7rem;
+        right: 0.3rem;
+        font-size: 0.12rem;
       }
 
       .name {
         position: absolute;
-        top: 292px;
-        right: 152px;
-        font-size: 14px;
+        top: 2.95rem;
+        right: 1.52rem;
+        font-size: 0.14rem;
       }
     </style>
   </head>
   <body>
     <div class="container">
       <div class="clock"></div>
-      <div class="from">嘉峪关</div>
-      <div class="to">厂区</div>
+      <div class="from"></div>
+      <div class="num"></div>
+      <div class="to"></div>
       <div class="name">王建国</div>
-      <div class="info-date"></div>
-      <!-- <div class="info-chexiang">12车厢 21</div> -->
+      <div class="info-date" />
     </div>
     <script src="https://unpkg.com/dayjs@1.11.9/dayjs.min.js"></script>
     <script>
@@ -77,18 +85,21 @@
       var dateDom = document.querySelector(".info-date");
       var fromDom = document.querySelector(".from");
       var toDom = document.querySelector(".to");
-      
+      var numDom = document.querySelector(".num");
+
       setInterval(() => {
         const isMonday = dayjs().day() === 1;
         clockDom.textContent = dayjs().format("MM月DD日 HH:mm:ss");
-        if (!isMonday) {
-          dateDom.textContent = dayjs().format("MM月DD日") + '  07:50开';
-          fromDom.textContent = '嘉峪关'
-          toDom.textContent = '厂区'
-        }else {
-          dateDom.textContent = dayjs().format("MM月DD日") + '  16:45开';
-          fromDom.textContent = '厂区'
-          toDom.textContent = '嘉峪关'
+        if (isMonday) {
+          dateDom.textContent = dayjs().format("MM月DD日") + "  07:50开";
+          fromDom.textContent = "嘉峪关";
+          toDom.textContent = "厂区";
+          numDom.textContent = '8921'
+        } else {
+          dateDom.textContent = dayjs().format("MM月DD日") + "  16:45开";
+          fromDom.textContent = "厂区";
+          toDom.textContent = "嘉峪关";
+          numDom.textContent = '8920'
         }
       }, 1000);
     </script>
