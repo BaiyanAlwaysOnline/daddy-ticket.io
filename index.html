@@ -88,14 +88,17 @@
       var numDom = document.querySelector(".num");
 
       setInterval(() => {
-        const isMonday = dayjs().day() === 1;
+        const hour = dayjs().hour();
+        const isMorning = hour >= 0 && hour <= 12;
+        const isEvening = hour >12 && hour < 23;
         clockDom.textContent = dayjs().format("MM月DD日 HH:mm:ss");
-        if (isMonday) {
+        if (isMorning) {
           dateDom.textContent = dayjs().format("MM月DD日") + "  08:02开";
           fromDom.textContent = "嘉峪关";
           toDom.textContent = "厂区";
           numDom.textContent = '8921'
-        } else {
+        } 
+        if (isEvening){
           dateDom.textContent = dayjs().format("MM月DD日") + "  16:30开";
           fromDom.textContent = "厂区";
           toDom.textContent = "嘉峪关";
