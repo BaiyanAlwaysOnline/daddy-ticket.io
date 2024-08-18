@@ -68,10 +68,25 @@
         right: 1.32rem;
         font-size: 0.14rem;
       }
+
+      .chexiang {
+        position: absolute;
+        right: 78px;
+        top: 248px;
+        width: 18px;
+        height: 18px;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url("./checi.jpg") no-repeat center;
+        background-size: cover
+      }
     </style>
   </head>
   <body>
     <div class="container">
+      <div class="chexiang"></div>
       <div class="clock"></div>
       <div class="from"></div>
       <div class="num"></div>
@@ -87,24 +102,24 @@
       var toDom = document.querySelector(".to");
       var numDom = document.querySelector(".num");
 
-      setInterval(() => {
-        const hour = dayjs().hour();
-        const isMorning = hour >= 0 && hour <= 12;
-        const isEvening = hour >12 && hour < 23;
-        clockDom.textContent = dayjs().format("MM月DD日 HH:mm:ss");
-        if (isMorning) {
-          dateDom.textContent = dayjs().format("MM月DD日") + "  08:02开";
-          fromDom.textContent = "嘉峪关";
-          toDom.textContent = "厂区";
-          numDom.textContent = '8921'
-        } 
-        if (isEvening){
-          dateDom.textContent = dayjs().format("MM月DD日") + "  16:30开";
-          fromDom.textContent = "厂区";
-          toDom.textContent = "嘉峪关";
-          numDom.textContent = '8922'
-        }
-      }, 1000);
+      // setInterval(() => {
+      //   const hour = dayjs().hour();
+      //   const isMorning = hour >= 0 && hour <= 12;
+      //   const isEvening = hour >12 && hour < 23;
+      //   clockDom.textContent = dayjs().format("MM月DD日 HH:mm:ss");
+      //   if (isMorning) {
+      //     dateDom.textContent = dayjs().format("MM月DD日") + "  08:02开";
+      //     fromDom.textContent = "嘉峪关";
+      //     toDom.textContent = "厂区";
+      //     numDom.textContent = '8921'
+      //   } 
+      //   if (isEvening){
+      //     dateDom.textContent = dayjs().format("MM月DD日") + "  16:30开";
+      //     fromDom.textContent = "厂区";
+      //     toDom.textContent = "嘉峪关";
+      //     numDom.textContent = '8922'
+      //   }
+      // }, 1000);
     </script>
   </body>
 </html>
