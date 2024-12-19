@@ -21,10 +21,10 @@
       .clock {
         position: absolute;
         top: 2.93rem;
-        right: .28rem;
+        right: 0.28rem;
         font-weight: 500;
         color: #5aa67c;
-        font-size: .14rem;
+        font-size: 0.14rem;
       }
 
       .from {
@@ -80,7 +80,7 @@
         align-items: center;
         justify-content: center;
         background: url("./checi.jpg") no-repeat center;
-        background-size: cover
+        background-size: cover;
       }
     </style>
   </head>
@@ -101,25 +101,41 @@
       var fromDom = document.querySelector(".from");
       var toDom = document.querySelector(".to");
       var numDom = document.querySelector(".num");
-      var workSite = '工厂站'
-      var homeSite = '嘉峪关四场站'
+      var workSite = "工厂站";
+      var homeSite = "嘉峪关四场站";
 
       setInterval(() => {
         const hour = dayjs().hour();
         const isMorning = hour >= 0 && hour <= 12;
-        const isEvening = hour >12 && hour < 23;
+        const isEvening = hour > 12 && hour < 23;
         clockDom.textContent = dayjs().format("MM月DD日 HH:mm:ss");
         if (isMorning) {
-          dateDom.textContent = dayjs().format("MM月DD日") + "  08:00开";
-          fromDom.textContent = homeSite;
-          toDom.textContent = workSite;
-          numDom.textContent = '8921'
-        } 
-        if (isEvening){
-          dateDom.textContent = dayjs().format("MM月DD日") + "  17:07开";
-          fromDom.textContent = workSite;
-          toDom.textContent = homeSite;
-          numDom.textContent = '8924'
+          const before_10 = hour <= 10;
+          if (before_10) {
+            dateDom.textContent = dayjs().format("MM月DD日") + "  08:00开";
+            fromDom.textContent = homeSite;
+            toDom.textContent = workSite;
+            numDom.textContent = "8921";
+          } else {
+            dateDom.textContent = dayjs().format("MM月DD日") + "  10:09开";
+            fromDom.textContent = workSite;
+            toDom.textContent = homeSite;
+            numDom.textContent = "8922";
+          }
+        }
+        if (isEvening) {
+          const before_17 = hour <= 17;
+          if (before_17) {
+            dateDom.textContent = dayjs().format("MM月DD日") + "  12:28开";
+            fromDom.textContent = homeSite;
+            toDom.textContent = workSite;
+            numDom.textContent = "8923";
+          } else {
+            dateDom.textContent = dayjs().format("MM月DD日") + "  17:07开";
+            fromDom.textContent = workSite;
+            toDom.textContent = homeSite;
+            numDom.textContent = "8924";
+          }
         }
       }, 1000);
     </script>
