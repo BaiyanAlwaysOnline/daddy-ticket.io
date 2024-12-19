@@ -101,6 +101,8 @@
       var fromDom = document.querySelector(".from");
       var toDom = document.querySelector(".to");
       var numDom = document.querySelector(".num");
+      var workSite = '工厂站'
+      var homeSite = '嘉峪关四场站'
 
       setInterval(() => {
         const hour = dayjs().hour();
@@ -108,15 +110,15 @@
         const isEvening = hour >12 && hour < 23;
         clockDom.textContent = dayjs().format("MM月DD日 HH:mm:ss");
         if (isMorning) {
-          dateDom.textContent = dayjs().format("MM月DD日") + "  08:02开";
-          fromDom.textContent = "嘉峪关";
-          toDom.textContent = "厂区";
+          dateDom.textContent = dayjs().format("MM月DD日") + "  08:00开";
+          fromDom.textContent = homeSite;
+          toDom.textContent = workSite;
           numDom.textContent = '8921'
         } 
         if (isEvening){
-          dateDom.textContent = dayjs().format("MM月DD日") + "  16:30开";
-          fromDom.textContent = "厂区";
-          toDom.textContent = "嘉峪关";
+          dateDom.textContent = dayjs().format("MM月DD日") + "  17:07开";
+          fromDom.textContent = workSite;
+          toDom.textContent = homeSite;
           numDom.textContent = '8922'
         }
       }, 1000);
