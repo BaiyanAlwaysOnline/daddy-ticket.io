@@ -110,7 +110,7 @@
         const isEvening = hour > 12 && hour < 23;
         clockDom.textContent = dayjs().format("MM月DD日 HH:mm:ss");
         if (isMorning) {
-          const before_10 = hour <= 10;
+          const before_10 = hour < 10;
           if (before_10) {
             dateDom.textContent = dayjs().format("MM月DD日") + "  08:00开";
             fromDom.textContent = homeSite;
