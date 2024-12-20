@@ -154,7 +154,7 @@
         }
         if (isEvening) {
           const before_17 = hour < 17;
-          if (!before_17) {
+          if (before_17) {
             dateDom.textContent = dayjs().format("MM月DD日") + "  12:28开";
             fromDom.textContent = homeSite;
             toDom.textContent = workSite;
